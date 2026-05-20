@@ -1,0 +1,9 @@
+openai==1.14.1
+python-dotenv==1.0.1
+Flask==3.0.2
+requests==2.31.0
+pyttsx3==2.90
+SpeechRecognition==3.10.1
+wikipedia==1.4.0
+pywhatkit==5.7
+Pillow==10.2.0
