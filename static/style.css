@@ -1,0 +1,24 @@
+/* ...your 3D background CSS from before... */
+.content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  top: 20%;
+  color: #0ff;
+}
+
+.chat-box {
+  margin-top: 20px;
+}
+
+#userInput {
+  padding: 10px;
+  font-size: 16px;
+  width: 300px;
+}
+
+button {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}

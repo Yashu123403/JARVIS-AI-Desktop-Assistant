@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jarvis Web</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="background">
+    <div class="stars">
+      <!-- multiple spans for 3D effect -->
+      <span style="--i:0;"></span>
+      <span style="--i:1;"></span>
+      <span style="--i:2;"></span>
+      <!-- add more spans as needed -->
+    </div>
+  </div>
+
+  <div class="content">
+    <h1>Welcome to Jarvis</h1>
+    <p>Ask me anything or type a command.</p>
+    
+    <div class="chat-box">
+      <input type="text" id="userInput" placeholder="Type here..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+    <div id="chatOutput"></div>
+  </div>
+
+  <script>
+    async function sendMessage() {
+      const input = document.getElementById("userInput");
+      const msg = input.value;
+      if (!msg) return;
+
+      const outputDiv = document.getElementById("chatOutput");
+      outputDiv.innerHTML += `<p><strong>You:</strong> ${msg}</p>`;
+      input.value = "";
+
+      const res = await fetch("/ask", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: msg })
+      });
+      const data = await res.json();
+      outputDiv.innerHTML += `<p><strong>Jarvis:</strong> ${data.reply}</p>`;
+      outputDiv.scrollTop = outputDiv.scrollHeight;
+    }
+  </script>
+</body>
+</html>
