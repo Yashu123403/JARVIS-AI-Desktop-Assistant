@@ -12,7 +12,7 @@ FEATURES
 - Desktop Automation (Open/close applications)
 - Web Search & Information Retrieval
 - Time-based queries and basic reminders
-- Fully local processing for privacy
+
 
 
 TECH STACK
@@ -42,10 +42,10 @@ INSTALLATION
 3. python -m venv venv
 
 4. Windows
-venv\Scripts\activate
+   venv\Scripts\activate
 
-macOS/Linux:
-source venv/bin/activate
+   macOS/Linux:
+   source venv/bin/activate
 
 5. pip install -r requirements.txt
 
@@ -55,6 +55,3 @@ source venv/bin/activate
 AUTHOR 
 YASHU A.B.
 
-
-git clone https://github.com/your-username/jarvis-desktop-assistant.git
-cd jarvis-desktop-assistant
